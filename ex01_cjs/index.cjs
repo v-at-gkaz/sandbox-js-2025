@@ -1,5 +1,10 @@
 const Square = require('./square.cjs');
 
+const {f1, f2, a} = require('./example_exports.cjs');
+f1();
+f2();
+console.log('a=', a);
+
 const mySquare = new Square(3);
 console.log(`The area of mySquare is ${mySquare.area()}`);
 
