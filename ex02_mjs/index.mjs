@@ -1,5 +1,10 @@
 import Square from "./square.mjs";
 
+import {f1, f2, a} from "./example_exports.mjs";
+f1();
+f2();
+console.log('a=', a);
+
 const mySquare = new Square(3);
 console.log(`The area of mySquare is ${mySquare.area()}`); 
 
