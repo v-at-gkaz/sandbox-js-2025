@@ -1,0 +1,16 @@
+{
+  "name": "ex04",
+  "version": "1.0.0",
+  "description": "ex04",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
