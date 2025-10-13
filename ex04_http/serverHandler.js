@@ -8,7 +8,7 @@ export const serverHandler = (req, res) => {
 
     const parsedUrl = url.split('?');
     const queryParams = parsedUrl[1];
-    const parsedQuery = queryParams.split('&');
+    const parsedQuery = queryParams?.split('&');
 
     console.log(`query:`, parsedQuery);
 
