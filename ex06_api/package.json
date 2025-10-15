@@ -1,0 +1,19 @@
+{
+  "name": "ex06",
+  "version": "1.0.0",
+  "description": "ex06",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3"
+  }
+}
