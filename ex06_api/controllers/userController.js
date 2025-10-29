@@ -41,7 +41,7 @@ export const userController = async (req, res, db) => {
             if(id){
                 console.log('get by id');
 
-                const one = db.getOne(id);
+                const one = await db.getOne(id);
 
                 if(one) {
                     res.writeHead(200, {'Content-Type': 'application/json'});

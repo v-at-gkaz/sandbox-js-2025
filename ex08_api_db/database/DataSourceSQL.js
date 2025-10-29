@@ -1,8 +1,8 @@
 import {exit, env, platform} from "node:process";
-import {readFileSync, writeFileSync, existsSync} from "node:fs";
 import {Sequelize} from "sequelize";
 import {config} from "dotenv";
 import readline from 'node:readline';
+
 config();
 
 const dbName = env.SUBD_DB_NAME || 'db';
@@ -23,8 +23,10 @@ export class DataSourceSQL {
         }
     );
     data = [];
+
     constructor() {
-        if(platform === "win32") {
+
+        if (platform === "win32") {
             const rl = readline.createInterface({
                 input: stdin,
                 output: stdout
@@ -49,6 +51,18 @@ export class DataSourceSQL {
 
         this.sequelize.authenticate().then(() => {
             console.log('Connection With Database Established Successfully.');
+
+            this.sequelize.query(`CREATE TABLE IF NOT EXISTS public.users (
+                                                                              id serial4 NOT NULL PRIMARY KEY,
+                                                                              "login" varchar(100) NOT NULL,
+                password varchar(100) NOT NULL,
+                CONSTRAINT login_uniq UNIQUE (login)
+                )`).then(() => {
+                console.log('Attempt to create database structure - success');
+            }).catch(err => {
+                console.log('Attempt to create database structure - error:', err);
+            });
+
         }).catch((error) => {
             console.error('Sequelize Connection Error:', error);
             exit(2);
@@ -71,69 +85,89 @@ export class DataSourceSQL {
         }
     }
 
-    getOne(id) {
-        const found = this.data.find(itm =>{
-            return +itm.id === +id;
-        });
-        if(found) {
-            return found;
-        }
-        return false;
-    }
-
-    add(user) {
-
-        let id= 1;
-        if(this.data.length){
-            const objectWithMaxId = this.data.reduce((maxObj, currentObj) => {
-                return (currentObj.id > maxObj.id) ? currentObj : maxObj;
-            });
-            id = objectWithMaxId.id + 1;
-        }
-
-        const newUser = {...user, id};
-        this.data.push(newUser);
-        this._save();
-        return newUser;
-    }
-
-    edit(user, id) {
-        let updatedUser;
-        for (let index = 0; index < this.data.length; index++) {
-            const element = this.data[index];
-            if(element.id === id) {
-                this.data[index] = user;
-                updatedUser = this.data[index];
-                this._save();
-                return updatedUser;
+    async getOne(id) {
+        try {
+            const result = await this.sequelize.query(`select *
+                                                       from public.users
+                                                       where id = ${id}`);
+            return {
+                status: 'success',
+                data: result[0][0]
             }
-        }
-        return false;
-    }
-
-    delete(id) {
-        this.data = this.data.filter(itm=>{
-            return +itm.id !== +id;
-        });
-        this._save();
-        return true;
-    }
-
-    _load(){
-        try {
-            this.data = JSON.parse(readFileSync(this.fileName));
-        } catch(e) {
-            console.error(e);
-            exit(-1);
+        } catch (error) {
+            return {
+                status: 'error',
+                data: error
+            };
         }
     }
 
-    _save(){
+    async add(user) {
+
         try {
-            writeFileSync(this.fileName, JSON.stringify(this.data));
-        } catch(e) {
-            console.error(e);
-            exit(-1);
+            const result =
+                await this.sequelize.query(`INSERT INTO public.users (login, password)
+                                            VALUES ('${user.name}', '') RETURNING id, login "name"`);
+
+            const created = result[0][0];
+
+            return {
+                status: 'success',
+                data: created
+            }
+        } catch (error) {
+            throw error;
+        }
+    }
+
+    async edit(user, id) {
+        try {
+
+            const sqlQuery = [
+                `UPDATE public.users
+                 SET `
+            ];
+
+            const sqlSubQuery = [];
+
+            if (user.name) {
+                sqlSubQuery.push(`login='${user.name}'`);
+            }
+            if (user.password) {
+                sqlSubQuery.push(`password='${user.password}'`);
+            }
+
+            sqlQuery.push(sqlSubQuery.join(', '));
+
+            sqlQuery.push(` WHERE id=${id}`);
+            sqlQuery.push(` RETURNING id, login "name"`);
+
+
+            const result =
+                await this.sequelize.query(sqlQuery.join(''));
+
+            const updated = result[0][0];
+
+            return {
+                status: 'success',
+                data: updated
+            }
+
+        } catch (error) {
+            throw error;
+        }
+    }
+
+    async delete(id) {
+        try {
+            await this.sequelize.query(`DELETE
+                                        FROM public.users
+                                        WHERE id = ${id};`);
+            return {
+                status: 'success'
+            }
+        } catch (error) {
+            throw error;
         }
     }
 }

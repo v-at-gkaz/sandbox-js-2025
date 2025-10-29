@@ -1,4 +1,4 @@
-CREATE TABLE public.users (
+CREATE TABLE IF NOT EXISTS public.users (
     id serial4 NOT NULL PRIMARY KEY,
     "login" varchar(100) NOT NULL,
     password varchar(100) NOT NULL,
