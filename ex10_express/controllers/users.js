@@ -1,9 +1,8 @@
 import createDebugMessages from 'debug';
+const debug = createDebugMessages('ex10-express:controller-user');
+import databasePostgresService from "../services/database-postgres.js";
 
-const debug = createDebugMessages('ex09-express:controller-user');
-
-
-export default class UsersController {
+class UsersController {
     constructor(db) {
         this.db = db;
     }
@@ -57,7 +56,7 @@ export default class UsersController {
 
     edit = async (req, res, next) => {
         try {
-            
+
             if (!(req.query.id || req.params.id)) {
                 throw {error: 'id is required'};
             }
@@ -67,7 +66,8 @@ export default class UsersController {
             }
 
             const id = req.params.id ? req.params.id : req.query.id;
-            res.status(201).send(await this.db.edit(req.body, id));
+            await this.db.edit(req.body, id)
+            res.status(201).send(await this.db.getOne(id));
         } catch (er) {
             res.status(500).send(er);
         }
@@ -78,14 +78,16 @@ export default class UsersController {
             if (!(req.query.id || req.params.id)) {
                 throw {error: 'id is required'};
             }
-
             const id = req.params.id ? req.params.id : req.query.id;
             await this.db.delete(id);
             res.status(204).send(null);
         } catch (er) {
+            //!
             res.status(500).send(er);
         }
 
     }
 
 }
+const usersController = new UsersController(databasePostgresService);
+export default usersController;

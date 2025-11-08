@@ -1,0 +1,168 @@
+import {exit, env, platform} from "node:process";
+import {Sequelize, DataTypes} from "sequelize";
+import {config} from "dotenv";
+import readline from 'node:readline';
+import createDebugMessages from 'debug';
+const debug = createDebugMessages('ex10-express:database');
+
+config();
+
+const dbName = env.SUBD_DB_NAME || 'db';
+const dbUser = env.SUBD_DB_USER || 'pguser';
+const dbPass = env.SUBD_DB_PASS || 'pgPass';
+const dbHost = env.SUBD_DB_HOST || 'localhost';
+const dbDialect = env.SUBD_DB_DIALECT || 'postgres';
+const dbSync = (env.SUBD_DB_SYNC || 'no') === 'yes';
+
+
+debug(dbSync, env.SUBD_DB_SYNC);
+
+class DataSource {
+    sequelize = new Sequelize(
+        dbName,
+        dbUser,
+        dbPass,
+        {
+            host: dbHost,
+            dialect: dbDialect,
+            define: {
+                underscored: true,
+            }
+        }
+    );
+
+    User = this.sequelize.define('User', {
+        id: {
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true
+        },
+        login: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            unique: true
+        },
+        password: {
+            type: DataTypes.STRING
+        }
+    }, {
+        tableName: 'users',
+        timestamps: false,
+        // freezeTableName: true,
+    });
+
+    data = [];
+
+    constructor() {
+
+        if (platform === "win32") {
+            const rl = readline.createInterface({
+                input: stdin,
+                output: stdout
+            });
+
+            rl.on("SIGINT", () => {
+                process.emit("SIGINT");
+            });
+        }
+
+        process.on("SIGINT", async () => {
+            try {
+                await this.sequelize.close();
+                console.log('Disconnected From DB Success');
+                exit(0);
+            } catch (error) {
+                console.error('Disconnected From DB Error:', error);
+                exit(1);
+            }
+        });
+
+
+        this.sequelize.authenticate().then(() => {
+            console.log('Connection With Database Established Successfully.');
+            if(dbSync){
+                this.sequelize.sync({force: true});
+            }
+        }).catch((error) => {
+            console.error('Sequelize Connection Error:', error);
+            exit(2);
+        });
+    }
+
+    async getAll() {
+       try {
+            const result = await this.User.findAll();
+            return {
+                status: 'success',
+                data: result
+            }
+        } catch (error) {
+            throw error;
+        }
+
+    }
+
+    async getOne(id) {
+        try {
+            const result = await this.User.findOne({where: {id}});
+            return {
+                status: 'success',
+                data: result
+            }
+        } catch (error) {
+            throw error;
+        }
+    }
+
+    async add(user) {
+        try {
+
+            const created = await this.User.create({
+                login: user.name,
+            });
+
+            return {
+                status: 'success',
+                data: created
+            }
+        } catch (error) {
+            throw error;
+        }
+    }
+
+    async edit(user, id) {
+        try {
+            const payload = {};
+
+            if (user.name) {
+                payload.login = user.name;
+            }
+
+            if (user.password) {
+                payload.password = user.password;
+            }
+
+            const updated = await this.User.update(payload, {where: {id}});
+
+            return {
+                status: 'success',
+                data: updated
+            }
+
+        } catch (error) {
+            throw error;
+        }
+    }
+
+    async delete(id) {
+        try {
+            await this.User.destroy({where: {id}});
+        } catch (error) {
+            throw error;
+        }
+    }
+}
+
+const databasePostgresService = new DataSource();
+
+export default databasePostgresService;
