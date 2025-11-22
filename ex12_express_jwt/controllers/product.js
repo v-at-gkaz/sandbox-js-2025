@@ -1,6 +1,6 @@
 import createDebugMessages from 'debug';
 const debug = createDebugMessages('ex12-express-jwt:controller-product');
-import databasePostgresService from "../services/database-postgres.js";
+import databasePostgresService from "../services/database.js";
 
 class ProductController {
     constructor(db) {

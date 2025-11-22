@@ -1,6 +1,6 @@
 import createDebugMessages from 'debug';
 const debug = createDebugMessages('ex12-express-jwt:controller-user');
-import databasePostgresService from "../services/database-postgres.js";
+import databasePostgresService from "../services/database.js";
 
 class UsersController {
     constructor(db) {
@@ -50,7 +50,7 @@ class UsersController {
 
         // var 2
         try {
-            const re = await this.db.add(req.body);
+            const re = await this.db.User.create(req.body);
             res.status(201).send(re);
         } catch (er) {
             res.status(500).send(er);

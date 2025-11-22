@@ -3,7 +3,7 @@ import {Sequelize, DataTypes} from "sequelize";
 import {config} from "dotenv";
 import readline from 'node:readline';
 import createDebugMessages from 'debug';
-const debug = createDebugMessages('ex10-express:database');
+const debug = createDebugMessages('ex12-express-jwt:database');
 
 config();
 
@@ -47,6 +47,95 @@ class DataSource {
         }
     }, {
         tableName: 'users',
+        timestamps: false,
+        // freezeTableName: true,
+    });
+
+    Customer = this.sequelize.define('Customer', {
+        id: {
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true
+        },
+        name: {
+            type: DataTypes.CHAR(255),
+            allowNull: false
+        },
+        email: {
+            type: DataTypes.CHAR(128),
+            unique: true
+        }
+    }, {
+        tableName: 'customers',
+        timestamps: false,
+        // freezeTableName: true,
+    });
+
+    Product = this.sequelize.define('Product', {
+        id: {
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true
+        },
+        name: {
+            type: DataTypes.CHAR(255),
+            allowNull: false
+        },
+        price: {
+            type: DataTypes.FLOAT(10,2),
+            allowNull: false
+        }
+    }, {
+        tableName: 'products',
+        timestamps: false,
+        // freezeTableName: true,
+    });
+
+    Order = this.sequelize.define('Order', {
+        id: {
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true
+        },
+        customerId: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'customers',
+                key: 'id',
+                onDelete: 'CASCADE',
+                onUpdate: 'CASCADE'
+            }
+        },
+    }, {
+        tableName: 'orders',
+        timestamps: false,
+        // freezeTableName: true,
+    });
+
+    OrderProduct = this.sequelize.define('OrderProduct', {
+        orderId: {
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            references: {
+                model: 'orders',
+                key: 'id',
+                onDelete: 'CASCADE',
+                onUpdate: 'CASCADE'
+            }
+        },
+        productId: {
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            references: {
+                model: 'products',
+                key: 'id',
+                onDelete: 'CASCADE',
+                onUpdate: 'CASCADE'
+            }
+        },
+    }, {
+        tableName: 'order_product',
         timestamps: false,
         // freezeTableName: true,
     });
