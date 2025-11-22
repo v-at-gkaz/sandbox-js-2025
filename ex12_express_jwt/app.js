@@ -11,14 +11,21 @@ const __dirname = dirname(__filename);
 import usersRouter from './routes/users.js';
 import productRouter from './routes/product.js';
 import authRouter from './routes/auth.js';
+import {authMiddleware} from "./middlewares/auth.js";
+
+const whitelist = [
+    '/auth',
+];
 
 const app = express();
+
+app.use(express.static(join(__dirname, 'public')));
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(bodyParser.json());
+app.use(authMiddleware(whitelist));
 
-app.use(express.static(join(__dirname, 'public')));
 
 app.use('/user', usersRouter);
 app.use('/product', productRouter);

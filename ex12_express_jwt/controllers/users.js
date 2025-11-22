@@ -1,5 +1,5 @@
 import createDebugMessages from 'debug';
-const debug = createDebugMessages('ex10-express:controller-user');
+const debug = createDebugMessages('ex12-express-jwt:controller-user');
 import databasePostgresService from "../services/database-postgres.js";
 
 class UsersController {
@@ -8,6 +8,9 @@ class UsersController {
     }
 
     getOneOrGetAll = async (req, res) => {
+
+        debug('user from req (users controller)', req.user);
+
         if (req.query.id) {
             await this.getOneById(req, res, req.query.id);
             return;
