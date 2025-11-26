@@ -12,6 +12,7 @@ import usersRouter from './routes/users.js';
 import productRouter from './routes/product.js';
 import authRouter from './routes/auth.js';
 import {authMiddleware} from "./middlewares/auth.js";
+import ordersRouter from "./routes/orders.js";
 
 const whitelist = [
     '/auth',
@@ -26,9 +27,10 @@ app.use(express.json());
 app.use(bodyParser.json());
 app.use(authMiddleware(whitelist));
 
+app.use('/auth', authRouter);
 
 app.use('/user', usersRouter);
 app.use('/product', productRouter);
-app.use('/auth', authRouter);
+app.use('/order', ordersRouter);
 
 export default app;

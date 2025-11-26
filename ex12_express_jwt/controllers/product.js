@@ -8,11 +8,11 @@ class ProductController {
     }
 
     getAll = async (req, res) => {
-
-            debug('user from req', req.user);
-
-            // FIXME: read from DB!
-            return res.status(200).send({status: 'success', data: [{id: 0, product: "name 1"}, {id: 0, product: "name 1"}]});
+        try {
+            res.send(await this.db.Product.findAll());
+        } catch (er) {
+            res.status(500).send(er);
+        }
     }
 
 }

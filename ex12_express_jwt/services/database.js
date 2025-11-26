@@ -134,6 +134,11 @@ class DataSource {
                 onUpdate: 'CASCADE'
             }
         },
+        quantity: {
+            type: DataTypes.INTEGER,
+            defaultValue: 1,
+            allowNull: false
+        }
     }, {
         tableName: 'order_product',
         timestamps: false,
