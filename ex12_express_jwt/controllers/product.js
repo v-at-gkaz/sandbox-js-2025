@@ -1,6 +1,6 @@
 import createDebugMessages from 'debug';
 const debug = createDebugMessages('ex12-express-jwt:controller-product');
-import databasePostgresService from "../services/database.js";
+import dbService from "../services/database.js";
 
 class ProductController {
     constructor(db) {
@@ -16,5 +16,5 @@ class ProductController {
     }
 
 }
-const productController = new ProductController(databasePostgresService);
+const productController = new ProductController(dbService);
 export default productController;

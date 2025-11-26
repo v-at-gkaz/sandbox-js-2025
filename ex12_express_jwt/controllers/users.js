@@ -1,6 +1,6 @@
 import createDebugMessages from 'debug';
 const debug = createDebugMessages('ex12-express-jwt:controller-user');
-import databasePostgresService from "../services/database.js";
+import dbService from "../services/database.js";
 
 class UsersController {
     constructor(db) {
@@ -92,5 +92,5 @@ class UsersController {
     }
 
 }
-const usersController = new UsersController(databasePostgresService);
+const usersController = new UsersController(dbService);
 export default usersController;

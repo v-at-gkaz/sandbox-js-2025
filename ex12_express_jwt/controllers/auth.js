@@ -1,7 +1,7 @@
 import createDebugMessages from 'debug';
 
 const debug = createDebugMessages('ex12-express-jwt:controller-auth');
-import databasePostgresService from "../services/database.js";
+import dbService from "../services/database.js";
 import jsonwebtoken from 'jsonwebtoken';
 import bcrypt from "bcrypt";
 
@@ -67,5 +67,5 @@ class AuthController {
 
 }
 
-const authController = new AuthController(databasePostgresService);
+const authController = new AuthController(dbService);
 export default authController;

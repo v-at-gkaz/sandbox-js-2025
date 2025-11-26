@@ -1,6 +1,7 @@
 import createDebugMessages from 'debug';
+
 const debug = createDebugMessages('ex12-express-jwt:controller-order');
-import databasePostgresService from "../services/database.js";
+import dbService from "../services/database.js";
 
 class OrdersController {
     constructor(db) {
@@ -18,23 +19,33 @@ class OrdersController {
     getOne = async (req, res) => {
         try {
             const id = req.params.id;
-          //  res.send(await this.db.Order.findOne({where: {id}}));
-          //  res.send(await this.db.OrderProduct.);
 
-           const result = await this.db.sequelize.query(`select
-                p.id productId, p.name productName, p.price ProductPrice, op.quantity quantity
-                from orders o, customers c, products p, order_product op
-                where o.customer_id = c.id and o.id = op.order_id and op.product_id = p.id and o.id = ${id}`);
-           res.send(result[0]);
+            res.send(await this.db.OrderProduct.findAll({
+                where: {orderId: id},
+                include: [this.db.Product]
+            }));
 
-            /*res.send(await this.db.OrderProduct.findAll({
-                where: { orderId: id },
-                include: [
-                    {
-                        model: this.db.Product
-                    }
-                ]
-            }));*/
+        } catch (er) {
+            res.status(500).send(er.toString());
+        }
+    }
+
+    getOneSQL = async (req, res) => {
+        try {
+            const id = req.params.id;
+            const result = await this.db.sequelize.query(`select p.id        productId,
+                                                                 p.name      productName,
+                                                                 p.price     ProductPrice,
+                                                                 op.quantity quantity
+                                                          from orders o,
+                                                               customers c,
+                                                               products p,
+                                                               order_product op
+                                                          where o.customer_id = c.id
+                                                            and o.id = op.order_id
+                                                            and op.product_id = p.id
+                                                            and o.id = ${id}`);
+            res.send(result[0]);
 
         } catch (er) {
             res.status(500).send(er.toString());
@@ -56,5 +67,6 @@ class OrdersController {
     }
 
 }
-const ordersController = new OrdersController(databasePostgresService);
+
+const ordersController = new OrdersController(dbService);
 export default ordersController;

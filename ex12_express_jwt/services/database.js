@@ -145,9 +145,14 @@ class DataSource {
         // freezeTableName: true,
     });
 
-    data = [];
 
     constructor() {
+
+        this.Product.hasMany(this.OrderProduct, {
+            foreignKey: 'productId'
+        });
+
+        this.OrderProduct.belongsTo(this.Product, {foreignKey: 'productId'});
 
         if (platform === "win32") {
             const rl = readline.createInterface({
@@ -257,6 +262,6 @@ class DataSource {
     }
 }
 
-const databasePostgresService = new DataSource();
+const dbService = new DataSource();
 
-export default databasePostgresService;
+export default dbService;
