@@ -1,0 +1,13 @@
+{
+  "name": "ex15_spa_vite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "vite --host"
+  },
+  "private": true,
+  "devDependencies": {
+    "vite": "^7.2.4"
+  }
+}
