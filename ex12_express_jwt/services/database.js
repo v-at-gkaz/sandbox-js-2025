@@ -78,7 +78,7 @@ class DataSource {
             autoIncrement: true
         },
         name: {
-            type: DataTypes.CHAR(255),
+            type: DataTypes.STRING(255),
             allowNull: false
         },
         price: {

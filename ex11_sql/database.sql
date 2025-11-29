@@ -7,7 +7,7 @@ CREATE TABLE public.users (
 );
 CREATE TABLE public.customers (
                                   id serial4 NOT NULL PRIMARY KEY,
-                                  "name" varchar(256) NOT NULL,
+                                  "name" varchar(255) NOT NULL,
                                   email varchar(128) NOT NULL,
                                   CONSTRAINT customers_email_key UNIQUE (email)
 );
@@ -18,7 +18,7 @@ CREATE TABLE public.orders (
 );
 CREATE TABLE public.products (
                                  id serial4 NOT NULL PRIMARY KEY,
-                                 "name" varchar(256) NOT NULL,
+                                 "name" varchar(255) NOT NULL,
                                  price numeric(10, 2) NOT NULL
 );
 CREATE TABLE public.order_product (
