@@ -3,7 +3,7 @@ import {Sequelize, DataTypes} from "sequelize";
 import {config} from "dotenv";
 import readline from 'node:readline';
 import createDebugMessages from 'debug';
-const debug = createDebugMessages('ex12-express-jwt:database');
+const debug = createDebugMessages('ex13-express-fullstack:database');
 
 config();
 

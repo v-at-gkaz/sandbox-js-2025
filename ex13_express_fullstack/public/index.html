@@ -1,0 +1,43 @@
+<html>
+
+<head>
+  <title>Express</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+  <h1>Аутентификация</h1>
+
+  <form id="form-auth" method="post">
+      <label for="login">Login:</label>
+      <input type="text" id="login" name="login">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password">
+      <input type="submit" value="Login">
+  </form>
+
+  <br />
+
+  <button id="btn-logout">Logout</button>
+
+
+
+<hr />
+
+  <h1>Получение данных с сервера</h1>
+
+  <button id="btn-get-orderds">Get Orders</button>
+
+  <br />
+  <br />
+
+  <div id="orders-table-wrapper"></div>
+  <div id="error-wrapper" class="errors"></div>
+
+  <hr />
+
+
+</body>
+
+<script src="js/index.js"></script>
+</html>
