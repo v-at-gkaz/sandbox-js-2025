@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    // Целевая версия JS должна поддерживаться вашей версией Node.js
+    "target": "ES2022",
+
+    // Использует нативную систему модулей Node.js (ESM)
+    "module": "NodeNext",
+
+    // Обязательно для правильного разрешения путей в режиме NodeNext
+    "moduleResolution": "NodeNext",
+
+    // Куда компилировать JS файлы
+    "outDir": "./dist",
+
+    // Где находятся исходники
+    "rootDir": "./src",
+
+    // Включает строгую проверку типов (рекомендуется)
+    "strict": true,
+
+    // Улучшает совместимость импортов CommonJS
+    "esModuleInterop": true,
+
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "sourceMap": false
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}

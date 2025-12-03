@@ -1,0 +1,25 @@
+{
+  "name": "ex16_hello_ts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "init": "tsc --init",
+    "build": "tsc",
+    "clear": "rm -f index.js",
+    "start": "node index.js",
+    "build_and_start": "tsc && node index.js",
+    "run": "ts-node src/index.ts",
+    "which": "which ts-node",
+    "which2": "/usr/bin/which ts-node",
+    "dev": "nodemon --ext 'ts' --exec 'ts-node src/index.ts'"
+  },
+  "type": "module",
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^3.1.11",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
