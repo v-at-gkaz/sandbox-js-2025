@@ -6,7 +6,7 @@
     "init": "tsc --init",
     "build": "tsc",
     "clear": "rm -f index.js",
-    "start": "node index.js",
+    "start": "node dist/index.js",
     "build_and_start": "tsc && node index.js",
     "run": "ts-node src/index.ts",
     "which": "which ts-node",
