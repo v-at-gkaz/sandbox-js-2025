@@ -1,0 +1,17 @@
+{
+  "name": "ex17_ts_decorators",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5.5.3",
+    "ts-node": "^10.9.2"
+  },
+  "private": true
+}
