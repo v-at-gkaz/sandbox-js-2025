@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="522bfbfd-bdf5-4e87-a5a1-43f45101971d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ex17_ts_decorators/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ex17_ts_decorators/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ex17_ts_decorators/.idea/ex17_ts_decorators.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ex17_ts_decorators/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ex17_ts_decorators/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ex17_ts_decorators/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ex17_ts_decorators/src/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ex17_ts_decorators/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="522bfbfd-bdf5-4e87-a5a1-43f45101971d" name="Changes" comment="Add ex17">
+      <change afterPath="$PROJECT_DIR$/ex18_nest_app/.env.example" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ex18_nest_app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/ex18_nest_app/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ex18_nest_app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/ex18_nest_app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ex18_nest_app/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ex18_nest_app/src/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ex18_nest_app/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ex18_nest_app/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ex18_nest_app/src/modules/dogs/dogs.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ex18_nest_app/src/modules/dogs/dogs.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ex18_nest_app/src/modules/dogs/dogs.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ex18_nest_app/src/modules/dogs/dogs.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ex18_nest_app/src/modules/dogs/entities/dog.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ex18_nest_app/src/modules/dogs/entities/dog.entity.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +38,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "git-widget-placeholder": "main",
     "javascript.preferred.runtime.type.id": "node",
-    "last_opened_file_path": "/home/user/WebstormProjects/sandbox-js-2025",
+    "last_opened_file_path": "/home/user/WebstormProjects/sandbox-js-2025/ex18_nest_app",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
@@ -51,7 +50,12 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ex18_nest_app" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.start">
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/ex18_nest_app/package.json" />
       <command value="run" />
@@ -94,11 +98,30 @@
       <option name="presentableId" value="Default" />
       <updated>1765381435735</updated>
       <workItem from="1765381436977" duration="35000" />
-      <workItem from="1765382163132" duration="4229000" />
+      <workItem from="1765382163132" duration="4466000" />
+      <workItem from="1765605371772" duration="7477000" />
     </task>
+    <task id="LOCAL-00001" summary="Add ex17">
+      <option name="closed" value="true" />
+      <created>1765386601407</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1765386601409</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="Add ex17" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add ex17" />
   </component>
 </project>

@@ -1,15 +1,20 @@
 import { Injectable } from '@nestjs/common';
 import { CreateDogDto } from './dto/create-dog.dto';
 import { UpdateDogDto } from './dto/update-dog.dto';
+import { Dog } from './entities/dog.entity';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
 
 @Injectable()
 export class DogsService {
+  constructor(@InjectRepository(Dog) private dogsRepository: Repository<Dog>) {}
+
   create(createDogDto: CreateDogDto) {
     return 'This action adds a new dog';
   }
 
   findAll() {
-    return `This action returns all dogs`;
+    return this.dogsRepository.find();
   }
 
   findOne(id: number) {
