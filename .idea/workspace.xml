@@ -1,17 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="522bfbfd-bdf5-4e87-a5a1-43f45101971d" name="Changes" comment="Add ex17">
-      <change afterPath="$PROJECT_DIR$/ex18_nest_app/.env.example" afterDir="false" />
+    <list default="true" id="522bfbfd-bdf5-4e87-a5a1-43f45101971d" name="Changes" comment="Improve ex18 (config, typeorm)">
+      <change afterPath="$PROJECT_DIR$/ex18_nest_app/src/modules/database/entities/customer.entity.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex18_nest_app/src/modules/database/entities/order-product.entity.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex18_nest_app/src/modules/database/entities/order.entity.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex18_nest_app/src/modules/database/entities/product.entity.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ex18_nest_app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/ex18_nest_app/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ex18_nest_app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/ex18_nest_app/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ex18_nest_app/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ex18_nest_app/src/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ex18_nest_app/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ex18_nest_app/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ex18_nest_app/src/modules/dogs/dogs.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ex18_nest_app/src/modules/dogs/dogs.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ex18_nest_app/src/modules/dogs/dogs.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ex18_nest_app/src/modules/dogs/dogs.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ex18_nest_app/src/modules/dogs/entities/dog.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ex18_nest_app/src/modules/dogs/entities/dog.entity.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ex18_nest_app/src/modules/cats/cats.controller.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ex18_nest_app/src/modules/cats/cats.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ex18_nest_app/src/modules/cats/cats.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ex18_nest_app/src/modules/dogs/dogs.controller.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ex18_nest_app/src/modules/dogs/dogs.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ex18_nest_app/src/modules/dogs/dogs.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ex18_nest_app/src/modules/dogs/dto/create-dog.dto.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ex18_nest_app/src/modules/dogs/dto/update-dog.dto.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ex18_nest_app/src/modules/dogs/entities/dog.entity.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +45,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "git-widget-placeholder": "main",
     "javascript.preferred.runtime.type.id": "node",
-    "last_opened_file_path": "/home/user/WebstormProjects/sandbox-js-2025/ex18_nest_app",
+    "last_opened_file_path": "/home/user/WebstormProjects/sandbox-js-2025/ex18_nest_app/src/modules/database/entities",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
@@ -52,6 +59,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ex18_nest_app/src/modules/database/entities" />
       <recent name="$PROJECT_DIR$/ex18_nest_app" />
     </key>
   </component>
@@ -99,7 +107,8 @@
       <updated>1765381435735</updated>
       <workItem from="1765381436977" duration="35000" />
       <workItem from="1765382163132" duration="4466000" />
-      <workItem from="1765605371772" duration="7477000" />
+      <workItem from="1765605371772" duration="7658000" />
+      <workItem from="1765985000961" duration="8341000" />
     </task>
     <task id="LOCAL-00001" summary="Add ex17">
       <option name="closed" value="true" />
@@ -109,7 +118,15 @@
       <option name="project" value="LOCAL" />
       <updated>1765386601409</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Improve ex18 (config, typeorm)">
+      <option name="closed" value="true" />
+      <created>1765614001237</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1765614001237</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -122,6 +139,7 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="Add ex17" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add ex17" />
+    <MESSAGE value="Improve ex18 (config, typeorm)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve ex18 (config, typeorm)" />
   </component>
 </project>

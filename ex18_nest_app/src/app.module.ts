@@ -1,10 +1,14 @@
 import { Module } from '@nestjs/common';
-import { CatsModule } from './modules/cats/cats.module';
-import { DogsModule } from './modules/dogs/dogs.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { config } from 'dotenv';
-import { Dog } from './modules/dogs/entities/dog.entity';
+import { DatabaseModule } from './modules/database/database.module';
+import { UserEntity } from './modules/database/entities/user.entity';
+import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
+import { CustomerEntity } from './modules/database/entities/customer.entity';
+import { ProductEntity } from './modules/database/entities/product.entity';
+import { OrderEntity } from './modules/database/entities/order.entity';
+import { OrderProductEntity } from './modules/database/entities/order-product.entity';
 
 config();
 const configService = new ConfigService();
@@ -31,16 +35,22 @@ const dbConfig: any = {
   username: dbUser,
   password: dbPass,
   database: dbName,
-  entities: [Dog],
+  entities: [
+    UserEntity,
+    CustomerEntity,
+    ProductEntity,
+    OrderEntity,
+    OrderProductEntity,
+  ],
   synchronize: dbSync,
+  namingStrategy: new SnakeNamingStrategy(),
 };
 
 @Module({
   imports: [
     ConfigModule.forRoot(configParams),
     TypeOrmModule.forRoot(dbConfig),
-    CatsModule,
-    DogsModule,
+    DatabaseModule,
   ],
   controllers: [],
   providers: [],
