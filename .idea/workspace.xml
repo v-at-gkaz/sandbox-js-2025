@@ -1,29 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="522bfbfd-bdf5-4e87-a5a1-43f45101971d" name="Changes" comment="Improve ex18 (config, typeorm)">
-      <change afterPath="$PROJECT_DIR$/ex18_nest_app/src/modules/database/entities/customer.entity.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ex18_nest_app/src/modules/database/entities/order-product.entity.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ex18_nest_app/src/modules/database/entities/order.entity.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ex18_nest_app/src/modules/database/entities/product.entity.ts" afterDir="false" />
+    <list default="true" id="522bfbfd-bdf5-4e87-a5a1-43f45101971d" name="Changes" comment="Improve ex18 (TypeORM + Code-First Database Creation)">
+      <change afterPath="$PROJECT_DIR$/ex18_nest_app/src/migrations-data-source.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ex18_nest_app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/ex18_nest_app/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ex18_nest_app/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/ex18_nest_app/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ex18_nest_app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/ex18_nest_app/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ex18_nest_app/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ex18_nest_app/src/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ex18_nest_app/src/modules/cats/cats.controller.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ex18_nest_app/src/modules/cats/cats.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ex18_nest_app/src/modules/cats/cats.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ex18_nest_app/src/modules/dogs/dogs.controller.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ex18_nest_app/src/modules/dogs/dogs.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ex18_nest_app/src/modules/dogs/dogs.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ex18_nest_app/src/modules/dogs/dto/create-dog.dto.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ex18_nest_app/src/modules/dogs/dto/update-dog.dto.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ex18_nest_app/src/modules/dogs/entities/dog.entity.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ex18_nest_app/src/modules/database/entities/user.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ex18_nest_app/src/modules/database/entities/user.entity.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -49,6 +45,11 @@
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "npm.migration:create.executor": "Run",
+    "npm.migration:generate.executor": "Run",
+    "npm.migration:revert.executor": "Run",
+    "npm.migration:run.executor": "Run",
+    "npm.migration:show.executor": "Run",
     "npm.start.executor": "Run",
     "npm.start:dev.executor": "Run",
     "prettierjs.PrettierConfiguration.Package": "/home/user/WebstormProjects/sandbox-js-2025/ex18_nest_app/node_modules/prettier",
@@ -63,22 +64,52 @@
       <recent name="$PROJECT_DIR$/ex18_nest_app" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.start">
-    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="npm.migration:create">
+    <configuration name="migration:create" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/ex18_nest_app/package.json" />
       <command value="run" />
       <scripts>
-        <script value="start" />
+        <script value="migration:create" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="start:dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+    <configuration name="migration:generate" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/ex18_nest_app/package.json" />
       <command value="run" />
       <scripts>
-        <script value="start:dev" />
+        <script value="migration:generate" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="migration:revert" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/ex18_nest_app/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="migration:revert" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="migration:run" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/ex18_nest_app/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="migration:run" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="migration:show" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/ex18_nest_app/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="migration:show" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -86,8 +117,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.start:dev" />
-        <item itemvalue="npm.start" />
+        <item itemvalue="npm.migration:run" />
+        <item itemvalue="npm.migration:show" />
+        <item itemvalue="npm.migration:create" />
+        <item itemvalue="npm.migration:generate" />
+        <item itemvalue="npm.migration:revert" />
       </list>
     </recent_temporary>
   </component>
@@ -108,7 +142,9 @@
       <workItem from="1765381436977" duration="35000" />
       <workItem from="1765382163132" duration="4466000" />
       <workItem from="1765605371772" duration="7658000" />
-      <workItem from="1765985000961" duration="8341000" />
+      <workItem from="1765985000961" duration="9178000" />
+      <workItem from="1766243014379" duration="313000" />
+      <workItem from="1766243339786" duration="7007000" />
     </task>
     <task id="LOCAL-00001" summary="Add ex17">
       <option name="closed" value="true" />
@@ -126,7 +162,15 @@
       <option name="project" value="LOCAL" />
       <updated>1765614001237</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Improve ex18 (TypeORM + Code-First Database Creation)">
+      <option name="closed" value="true" />
+      <created>1765993613527</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1765993613527</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -140,6 +184,7 @@
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="Add ex17" />
     <MESSAGE value="Improve ex18 (config, typeorm)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improve ex18 (config, typeorm)" />
+    <MESSAGE value="Improve ex18 (TypeORM + Code-First Database Creation)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve ex18 (TypeORM + Code-First Database Creation)" />
   </component>
 </project>

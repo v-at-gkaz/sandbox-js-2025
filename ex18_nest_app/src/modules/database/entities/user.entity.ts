@@ -21,6 +21,9 @@ export class UserEntity {
   })
   password: string;
 
+  @Column({ type: 'boolean', default: false })
+  isActive: boolean;
+
   @OneToOne(() => CustomerEntity, (customer) => customer.user)
   customer: CustomerEntity;
 }

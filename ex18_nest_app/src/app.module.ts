@@ -3,12 +3,8 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { config } from 'dotenv';
 import { DatabaseModule } from './modules/database/database.module';
-import { UserEntity } from './modules/database/entities/user.entity';
 import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
-import { CustomerEntity } from './modules/database/entities/customer.entity';
-import { ProductEntity } from './modules/database/entities/product.entity';
-import { OrderEntity } from './modules/database/entities/order.entity';
-import { OrderProductEntity } from './modules/database/entities/order-product.entity';
+import { join } from 'node:path';
 
 config();
 const configService = new ConfigService();
@@ -28,20 +24,14 @@ const dbPass: string = configService.get('SUBD_DB_PASS', 'postgres');
 const dbName: string = configService.get('SUBD_DB_NAME', 'postgres');
 const dbSync = configService.get('SUBD_DB_SYNC', 'no') === 'yes';
 
-const dbConfig: any = {
+export const dbConfig: any = {
   type: dbType,
   host: dbHost,
   port: dbPort,
   username: dbUser,
   password: dbPass,
   database: dbName,
-  entities: [
-    UserEntity,
-    CustomerEntity,
-    ProductEntity,
-    OrderEntity,
-    OrderProductEntity,
-  ],
+  entities: [join(__dirname, '**', '*.entity{.ts,.js}')],
   synchronize: dbSync,
   namingStrategy: new SnakeNamingStrategy(),
 };
