@@ -17,13 +17,21 @@ export class DatabaseController {
     return this.databaseService.findAll();
   }
 
+  @Get('test-payload-data')
+  findAllInPayloadData() {
+    return this.databaseService.findAllInPayloadData();
+  }
+
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.databaseService.findOne(+id);
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateDatabaseDto: UpdateDatabaseDto) {
+  update(
+    @Param('id') id: string,
+    @Body() updateDatabaseDto: UpdateDatabaseDto,
+  ) {
     return this.databaseService.update(+id, updateDatabaseDto);
   }
 

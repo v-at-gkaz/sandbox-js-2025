@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="522bfbfd-bdf5-4e87-a5a1-43f45101971d" name="Changes" comment="Add ex19">
-      <change afterPath="$PROJECT_DIR$/ex19_payloadcms_demo/src/collections/Data.ts" afterDir="false" />
+    <list default="true" id="522bfbfd-bdf5-4e87-a5a1-43f45101971d" name="Changes" comment="Improve ex19 (Delete Collection 'Media'. Add Collection 'Data')">
+      <change afterPath="$PROJECT_DIR$/ex18_nest_app/src/modules/database/entities/data.entity.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ex19_payloadcms_demo/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/ex19_payloadcms_demo/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ex19_payloadcms_demo/src/app/(payload)/admin/importMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/ex19_payloadcms_demo/src/app/(payload)/admin/importMap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ex19_payloadcms_demo/src/collections/Media.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ex19_payloadcms_demo/src/payload-types.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ex18_nest_app/src/modules/database/database.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ex18_nest_app/src/modules/database/database.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ex18_nest_app/src/modules/database/database.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ex18_nest_app/src/modules/database/database.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ex18_nest_app/src/modules/database/database.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ex18_nest_app/src/modules/database/database.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ex19_payloadcms_demo/src/payload.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ex19_payloadcms_demo/src/payload.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +41,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "git-widget-placeholder": "main",
     "javascript.preferred.runtime.type.id": "node",
-    "last_opened_file_path": "/home/user/WebstormProjects/sandbox-js-2025/ex19_payloadcms_demo/src/collections",
+    "last_opened_file_path": "/home/user/WebstormProjects/sandbox-js-2025/ex18_nest_app/src/modules/database/entities",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
@@ -69,32 +68,12 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/ex19_payloadcms_demo/src/collections" />
       <recent name="$PROJECT_DIR$/ex18_nest_app/src/modules/database/entities" />
+      <recent name="$PROJECT_DIR$/ex19_payloadcms_demo/src/collections" />
       <recent name="$PROJECT_DIR$/ex18_nest_app" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.build">
-    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/ex19_payloadcms_demo/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="build" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
-    <configuration name="create_migrations" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/ex19_payloadcms_demo/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="create_migrations" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="npm.dev">
     <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/ex19_payloadcms_demo/package.json" />
       <command value="run" />
@@ -115,11 +94,31 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/ex19_payloadcms_demo/package.json" />
+    <configuration name="migration:generate" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/ex18_nest_app/package.json" />
       <command value="run" />
       <scripts>
-        <script value="start" />
+        <script value="migration:generate" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="migration:run" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/ex18_nest_app/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="migration:run" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start:dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/ex18_nest_app/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start:dev" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -127,11 +126,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.create_migrations" />
         <item itemvalue="npm.dev" />
         <item itemvalue="npm.migrate" />
-        <item itemvalue="npm.start" />
-        <item itemvalue="npm.build" />
+        <item itemvalue="npm.start:dev" />
+        <item itemvalue="npm.migration:run" />
+        <item itemvalue="npm.migration:generate" />
       </list>
     </recent_temporary>
   </component>
@@ -155,7 +154,7 @@
       <workItem from="1765985000961" duration="9178000" />
       <workItem from="1766243014379" duration="313000" />
       <workItem from="1766243339786" duration="7290000" />
-      <workItem from="1766848016712" duration="7802000" />
+      <workItem from="1766848016712" duration="11415000" />
     </task>
     <task id="LOCAL-00001" summary="Add ex17">
       <option name="closed" value="true" />
@@ -213,7 +212,15 @@
       <option name="project" value="LOCAL" />
       <updated>1766850470617</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Improve ex19 (Delete Collection 'Media'. Add Collection 'Data')">
+      <option name="closed" value="true" />
+      <created>1766856180426</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1766856180435</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -232,6 +239,7 @@
     <MESSAGE value="Improve ex18 (Add schema 'typeorm' to all entities)" />
     <MESSAGE value="Improve ex18 (update .idea/workspace.xml)" />
     <MESSAGE value="Add ex19" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add ex19" />
+    <MESSAGE value="Improve ex19 (Delete Collection 'Media'. Add Collection 'Data')" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve ex19 (Delete Collection 'Media'. Add Collection 'Data')" />
   </component>
 </project>
