@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="522bfbfd-bdf5-4e87-a5a1-43f45101971d" name="Changes" comment="Improve ex19 (Delete Collection 'Media'. Add Collection 'Data')">
-      <change afterPath="$PROJECT_DIR$/ex18_nest_app/src/modules/database/entities/data.entity.ts" afterDir="false" />
+    <list default="true" id="522bfbfd-bdf5-4e87-a5a1-43f45101971d" name="Changes" comment="Improve ex18 (Add entity 'data')">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ex18_nest_app/src/modules/database/database.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ex18_nest_app/src/modules/database/database.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ex18_nest_app/src/modules/database/database.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ex18_nest_app/src/modules/database/database.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ex18_nest_app/src/modules/database/database.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ex18_nest_app/src/modules/database/database.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ex19_payloadcms_demo/src/payload.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ex19_payloadcms_demo/src/payload.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +149,7 @@
       <workItem from="1765985000961" duration="9178000" />
       <workItem from="1766243014379" duration="313000" />
       <workItem from="1766243339786" duration="7290000" />
-      <workItem from="1766848016712" duration="11415000" />
+      <workItem from="1766848016712" duration="12166000" />
     </task>
     <task id="LOCAL-00001" summary="Add ex17">
       <option name="closed" value="true" />
@@ -220,7 +215,15 @@
       <option name="project" value="LOCAL" />
       <updated>1766856180435</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Improve ex18 (Add entity 'data')">
+      <option name="closed" value="true" />
+      <created>1766859859923</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1766859859923</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,6 +243,7 @@
     <MESSAGE value="Improve ex18 (update .idea/workspace.xml)" />
     <MESSAGE value="Add ex19" />
     <MESSAGE value="Improve ex19 (Delete Collection 'Media'. Add Collection 'Data')" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improve ex19 (Delete Collection 'Media'. Add Collection 'Data')" />
+    <MESSAGE value="Improve ex18 (Add entity 'data')" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve ex18 (Add entity 'data')" />
   </component>
 </project>
