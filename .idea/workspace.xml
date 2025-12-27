@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="522bfbfd-bdf5-4e87-a5a1-43f45101971d" name="Changes" comment="Improve ex18 (update .idea/workspace.xml)">
+    <list default="true" id="522bfbfd-bdf5-4e87-a5a1-43f45101971d" name="Changes" comment="Add ex19">
+      <change afterPath="$PROJECT_DIR$/ex19_payloadcms_demo/src/collections/Data.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ex19_payloadcms_demo/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/ex19_payloadcms_demo/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ex19_payloadcms_demo/src/app/(payload)/admin/importMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/ex19_payloadcms_demo/src/app/(payload)/admin/importMap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ex19_payloadcms_demo/src/collections/Media.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ex19_payloadcms_demo/src/payload-types.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ex19_payloadcms_demo/src/payload.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ex19_payloadcms_demo/src/payload.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,84 +33,93 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/user/WebstormProjects/sandbox-js-2025/ex18_nest_app/src/modules/database/entities&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.migration:create.executor&quot;: &quot;Run&quot;,
-    &quot;npm.migration:generate.executor&quot;: &quot;Run&quot;,
-    &quot;npm.migration:revert.executor&quot;: &quot;Run&quot;,
-    &quot;npm.migration:run.executor&quot;: &quot;Run&quot;,
-    &quot;npm.migration:show.executor&quot;: &quot;Run&quot;,
-    &quot;npm.start.executor&quot;: &quot;Run&quot;,
-    &quot;npm.start:dev.executor&quot;: &quot;Run&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/home/user/WebstormProjects/sandbox-js-2025/ex18_nest_app/node_modules/prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/home/user/WebstormProjects/sandbox-js-2025/ex16_hello_ts/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "git-widget-placeholder": "main",
+    "javascript.preferred.runtime.type.id": "node",
+    "last_opened_file_path": "/home/user/WebstormProjects/sandbox-js-2025/ex19_payloadcms_demo/src/collections",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.build.executor": "Run",
+    "npm.create_migrations.executor": "Run",
+    "npm.dev.executor": "Run",
+    "npm.generate:importmap.executor": "Run",
+    "npm.generate:types.executor": "Run",
+    "npm.migrate.executor": "Run",
+    "npm.migration:create.executor": "Run",
+    "npm.migration:generate.executor": "Run",
+    "npm.migration:revert.executor": "Run",
+    "npm.migration:run.executor": "Run",
+    "npm.migration:show.executor": "Run",
+    "npm.payload.executor": "Run",
+    "npm.run.executor": "Run",
+    "npm.start.executor": "Run",
+    "npm.start:dev.executor": "Run",
+    "prettierjs.PrettierConfiguration.Package": "/home/user/WebstormProjects/sandbox-js-2025/ex19_payloadcms_demo/node_modules/prettier",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "ts.external.directory.path": "/home/user/WebstormProjects/sandbox-js-2025/ex16_hello_ts/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ex19_payloadcms_demo/src/collections" />
       <recent name="$PROJECT_DIR$/ex18_nest_app/src/modules/database/entities" />
       <recent name="$PROJECT_DIR$/ex18_nest_app" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.migration:create">
-    <configuration name="migration:create" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/ex18_nest_app/package.json" />
+  <component name="RunManager" selected="npm.build">
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/ex19_payloadcms_demo/package.json" />
       <command value="run" />
       <scripts>
-        <script value="migration:create" />
+        <script value="build" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="migration:generate" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/ex18_nest_app/package.json" />
+    <configuration name="create_migrations" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/ex19_payloadcms_demo/package.json" />
       <command value="run" />
       <scripts>
-        <script value="migration:generate" />
+        <script value="create_migrations" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="migration:revert" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/ex18_nest_app/package.json" />
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/ex19_payloadcms_demo/package.json" />
       <command value="run" />
       <scripts>
-        <script value="migration:revert" />
+        <script value="dev" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="migration:run" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/ex18_nest_app/package.json" />
+    <configuration name="migrate" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/ex19_payloadcms_demo/package.json" />
       <command value="run" />
       <scripts>
-        <script value="migration:run" />
+        <script value="migrate" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="migration:show" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/ex18_nest_app/package.json" />
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/ex19_payloadcms_demo/package.json" />
       <command value="run" />
       <scripts>
-        <script value="migration:show" />
+        <script value="start" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -112,11 +127,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.migration:run" />
-        <item itemvalue="npm.migration:generate" />
-        <item itemvalue="npm.migration:show" />
-        <item itemvalue="npm.migration:create" />
-        <item itemvalue="npm.migration:revert" />
+        <item itemvalue="npm.create_migrations" />
+        <item itemvalue="npm.dev" />
+        <item itemvalue="npm.migrate" />
+        <item itemvalue="npm.start" />
+        <item itemvalue="npm.build" />
       </list>
     </recent_temporary>
   </component>
@@ -140,7 +155,7 @@
       <workItem from="1765985000961" duration="9178000" />
       <workItem from="1766243014379" duration="313000" />
       <workItem from="1766243339786" duration="7290000" />
-      <workItem from="1766848016712" duration="2401000" />
+      <workItem from="1766848016712" duration="7802000" />
     </task>
     <task id="LOCAL-00001" summary="Add ex17">
       <option name="closed" value="true" />
@@ -190,7 +205,15 @@
       <option name="project" value="LOCAL" />
       <updated>1766849383598</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Add ex19">
+      <option name="closed" value="true" />
+      <created>1766850470617</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1766850470617</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,6 +231,7 @@
     <MESSAGE value="Improve ex18 (Migrations!)" />
     <MESSAGE value="Improve ex18 (Add schema 'typeorm' to all entities)" />
     <MESSAGE value="Improve ex18 (update .idea/workspace.xml)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improve ex18 (update .idea/workspace.xml)" />
+    <MESSAGE value="Add ex19" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add ex19" />
   </component>
 </project>
