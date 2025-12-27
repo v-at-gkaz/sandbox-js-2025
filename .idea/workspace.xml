@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="522bfbfd-bdf5-4e87-a5a1-43f45101971d" name="Changes" comment="Improve ex18 (Migrations!)">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ex18_nest_app/src/migrations/1766249750870-init.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ex18_nest_app/src/migrations/1766249909412-seed-admin.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ex18_nest_app/src/migrations/1766848661015-seed-admin.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ex18_nest_app/src/modules/database/entities/customer.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ex18_nest_app/src/modules/database/entities/customer.entity.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ex18_nest_app/src/modules/database/entities/order-product.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ex18_nest_app/src/modules/database/entities/order-product.entity.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ex18_nest_app/src/modules/database/entities/order.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ex18_nest_app/src/modules/database/entities/order.entity.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ex18_nest_app/src/modules/database/entities/product.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ex18_nest_app/src/modules/database/entities/product.entity.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ex18_nest_app/src/modules/database/entities/user.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ex18_nest_app/src/modules/database/entities/user.entity.ts" afterDir="false" />
-    </list>
+    <list default="true" id="522bfbfd-bdf5-4e87-a5a1-43f45101971d" name="Changes" comment="Improve ex18 (Add schema 'typeorm' to all entities)" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -147,7 +138,7 @@
       <workItem from="1765985000961" duration="9178000" />
       <workItem from="1766243014379" duration="313000" />
       <workItem from="1766243339786" duration="7290000" />
-      <workItem from="1766848016712" duration="956000" />
+      <workItem from="1766848016712" duration="1317000" />
     </task>
     <task id="LOCAL-00001" summary="Add ex17">
       <option name="closed" value="true" />
@@ -181,7 +172,15 @@
       <option name="project" value="LOCAL" />
       <updated>1766250464420</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Improve ex18 (Add schema 'typeorm' to all entities)">
+      <option name="closed" value="true" />
+      <created>1766849334809</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1766849334809</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,6 +196,7 @@
     <MESSAGE value="Improve ex18 (config, typeorm)" />
     <MESSAGE value="Improve ex18 (TypeORM + Code-First Database Creation)" />
     <MESSAGE value="Improve ex18 (Migrations!)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improve ex18 (Migrations!)" />
+    <MESSAGE value="Improve ex18 (Add schema 'typeorm' to all entities)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve ex18 (Add schema 'typeorm' to all entities)" />
   </component>
 </project>
