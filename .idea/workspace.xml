@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="522bfbfd-bdf5-4e87-a5a1-43f45101971d" name="Changes" comment="Fix .ides/workspace.xml">
-      <change afterPath="$PROJECT_DIR$/ex20_game/src/modules/database/entities/results.entity.ts" afterDir="false" />
+    <list default="true" id="522bfbfd-bdf5-4e87-a5a1-43f45101971d" name="Changes" comment="Add ex20_game">
+      <change afterPath="$PROJECT_DIR$/ex20_game/src/modules/database/dto/sign-in.dto.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex20_game/src/modules/database/dto/sign-up.dto.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ex20_game/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ex20_game/src/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ex20_game/src/modules/database/database.controller.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ex20_game/src/modules/database/database.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ex20_game/src/modules/database/database.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ex20_game/src/modules/database/database.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ex20_game/src/modules/database/database.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +45,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "git-widget-placeholder": "main",
     "javascript.preferred.runtime.type.id": "node",
-    "last_opened_file_path": "/home/user/WebstormProjects/sandbox-js-2025/ex20_game/src/modules/database/entities",
+    "last_opened_file_path": "/home/user/WebstormProjects/sandbox-js-2025/ex20_game/src/modules/database/dto",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -70,11 +75,15 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ex20_game/src/modules/database/dto" />
       <recent name="$PROJECT_DIR$/ex20_game/src/modules/database/entities" />
       <recent name="$PROJECT_DIR$/ex20_game" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/ex18_nest_app/src/modules/database/entities" />
-      <recent name="$PROJECT_DIR$/ex19_payloadcms_demo/src/collections" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ex20_game/src/modules/auth" />
+      <recent name="$PROJECT_DIR$/ex20_game/src/modules" />
     </key>
   </component>
   <component name="RunManager" selected="npm.dev">
@@ -159,7 +168,7 @@
       <workItem from="1766243014379" duration="313000" />
       <workItem from="1766243339786" duration="7290000" />
       <workItem from="1766848016712" duration="12363000" />
-      <workItem from="1768402332445" duration="3636000" />
+      <workItem from="1768402332445" duration="9204000" />
     </task>
     <task id="LOCAL-00001" summary="Add ex17">
       <option name="closed" value="true" />
@@ -241,7 +250,15 @@
       <option name="project" value="LOCAL" />
       <updated>1766860345017</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Add ex20_game">
+      <option name="closed" value="true" />
+      <created>1768406475075</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1768406475075</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,6 +286,7 @@
     <MESSAGE value="Improve ex19 (Delete Collection 'Media'. Add Collection 'Data')" />
     <MESSAGE value="Improve ex18 (Add entity 'data')" />
     <MESSAGE value="Fix .ides/workspace.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix .ides/workspace.xml" />
+    <MESSAGE value="Add ex20_game" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add ex20_game" />
   </component>
 </project>

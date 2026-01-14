@@ -5,6 +5,8 @@ import { config } from 'dotenv';
 import { DatabaseModule } from './modules/database/database.module';
 import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
 import { join } from 'node:path';
+import { AuthModule } from './modules/auth/auth.module';
+import { AuthController } from './modules/auth/auth.controller';
 
 config();
 const configService = new ConfigService();
@@ -41,8 +43,8 @@ export const dbConfig: any = {
     ConfigModule.forRoot(configParams),
     TypeOrmModule.forRoot(dbConfig),
     DatabaseModule,
+    AuthModule,
   ],
-  controllers: [],
   providers: [],
 })
 export class AppModule {}
