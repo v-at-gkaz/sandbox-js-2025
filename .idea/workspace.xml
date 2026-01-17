@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="522bfbfd-bdf5-4e87-a5a1-43f45101971d" name="Changes" comment="Improve ex20_game (Add module Auth)">
+    <list default="true" id="522bfbfd-bdf5-4e87-a5a1-43f45101971d" name="Changes" comment="Improve ex20_game (Add jwt and create AuthGuard manually)">
+      <change afterPath="$PROJECT_DIR$/ex20_game/src/modules/auth/jwt-auth.guard.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex20_game/src/modules/auth/jwt.strategy.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex20_game/src/modules/auth/local-auth.guard.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex20_game/src/modules/auth/local.strategy.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ex20_game/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/ex20_game/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ex20_game/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/ex20_game/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ex20_game/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ex20_game/src/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ex20_game/src/modules/auth/auth.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ex20_game/src/modules/auth/auth.controller.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ex20_game/src/modules/auth/auth.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ex20_game/src/modules/auth/auth.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ex20_game/src/modules/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ex20_game/src/modules/auth/auth.service.ts" afterDir="false" />
@@ -36,50 +39,50 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/user/WebstormProjects/sandbox-js-2025/ex20_game/src/modules/database/dto&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.build.executor&quot;: &quot;Run&quot;,
-    &quot;npm.create_migrations.executor&quot;: &quot;Run&quot;,
-    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
-    &quot;npm.generate:importmap.executor&quot;: &quot;Run&quot;,
-    &quot;npm.generate:types.executor&quot;: &quot;Run&quot;,
-    &quot;npm.migrate.executor&quot;: &quot;Run&quot;,
-    &quot;npm.migration:create.executor&quot;: &quot;Run&quot;,
-    &quot;npm.migration:generate.executor&quot;: &quot;Run&quot;,
-    &quot;npm.migration:revert.executor&quot;: &quot;Run&quot;,
-    &quot;npm.migration:run.executor&quot;: &quot;Run&quot;,
-    &quot;npm.migration:show.executor&quot;: &quot;Run&quot;,
-    &quot;npm.payload.executor&quot;: &quot;Run&quot;,
-    &quot;npm.run.executor&quot;: &quot;Run&quot;,
-    &quot;npm.start.executor&quot;: &quot;Run&quot;,
-    &quot;npm.start:dev (1).executor&quot;: &quot;Run&quot;,
-    &quot;npm.start:dev.executor&quot;: &quot;Run&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/home/user/WebstormProjects/sandbox-js-2025/ex19_payloadcms_demo/node_modules/prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/home/user/WebstormProjects/sandbox-js-2025/ex16_hello_ts/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "git-widget-placeholder": "main",
+    "javascript.preferred.runtime.type.id": "node",
+    "last_opened_file_path": "/home/user/WebstormProjects/sandbox-js-2025/ex20_game/src/modules/auth",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.build.executor": "Run",
+    "npm.create_migrations.executor": "Run",
+    "npm.dev.executor": "Run",
+    "npm.generate:importmap.executor": "Run",
+    "npm.generate:types.executor": "Run",
+    "npm.migrate.executor": "Run",
+    "npm.migration:create.executor": "Run",
+    "npm.migration:generate.executor": "Run",
+    "npm.migration:revert.executor": "Run",
+    "npm.migration:run.executor": "Run",
+    "npm.migration:show.executor": "Run",
+    "npm.payload.executor": "Run",
+    "npm.run.executor": "Run",
+    "npm.start.executor": "Run",
+    "npm.start:dev (1).executor": "Run",
+    "npm.start:dev.executor": "Run",
+    "prettierjs.PrettierConfiguration.Package": "/home/user/WebstormProjects/sandbox-js-2025/ex19_payloadcms_demo/node_modules/prettier",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "ts.external.directory.path": "/home/user/WebstormProjects/sandbox-js-2025/ex16_hello_ts/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ex20_game/src/modules/auth" />
       <recent name="$PROJECT_DIR$/ex20_game/src/modules/database/dto" />
       <recent name="$PROJECT_DIR$/ex20_game/src/modules/database/entities" />
       <recent name="$PROJECT_DIR$/ex20_game" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/ex18_nest_app/src/modules/database/entities" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/ex20_game/src/modules/auth" />
@@ -169,7 +172,7 @@
       <workItem from="1766243339786" duration="7290000" />
       <workItem from="1766848016712" duration="12363000" />
       <workItem from="1768402332445" duration="9400000" />
-      <workItem from="1768658468564" duration="4850000" />
+      <workItem from="1768658468564" duration="8016000" />
     </task>
     <task id="LOCAL-00001" summary="Add ex17">
       <option name="closed" value="true" />
@@ -267,7 +270,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768412055969</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Improve ex20_game (Add jwt and create AuthGuard manually)">
+      <option name="closed" value="true" />
+      <created>1768663469625</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1768663469626</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -297,6 +308,7 @@
     <MESSAGE value="Fix .ides/workspace.xml" />
     <MESSAGE value="Add ex20_game" />
     <MESSAGE value="Improve ex20_game (Add module Auth)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improve ex20_game (Add module Auth)" />
+    <MESSAGE value="Improve ex20_game (Add jwt and create AuthGuard manually)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve ex20_game (Add jwt and create AuthGuard manually)" />
   </component>
 </project>

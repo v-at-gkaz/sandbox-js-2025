@@ -14,14 +14,8 @@ export class AuthService {
     private jwtService: JwtService,
   ) {}
 
-  async signIn(username: string, pass: string): Promise<any> {
-    const user = await this.dbService.findOne(username);
-    // FIXME !
-    if (user?.password !== pass) {
-      throw new UnauthorizedException();
-    }
-
-    const payload = { sub: user.id, login: user.login };
+  signIn(user: any): any {
+    const payload = { username: user.login, sub: user.id };
     return {
       access_token: this.jwtService.sign(payload),
     };
@@ -42,5 +36,14 @@ export class AuthService {
       // FIXME !
       throw new InternalServerErrorException();
     }
+  }
+
+  async validateUser(username: string, pass: string) {
+    const user = await this.dbService.findOne(username);
+    if (user && user.password === pass) {
+      const { password, ...result } = user;
+      return result;
+    }
+    return null;
   }
 }

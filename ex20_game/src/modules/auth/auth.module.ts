@@ -5,11 +5,13 @@ import { DatabaseModule } from '../database/database.module';
 import { JwtModule } from '@nestjs/jwt';
 import { config } from 'dotenv';
 import { ConfigService } from '@nestjs/config';
+import { LocalStrategy } from './local.strategy';
+import { JwtStrategy } from './jwt.strategy';
 config();
 const configService = new ConfigService();
 
 @Module({
-  providers: [AuthService],
+  providers: [AuthService, LocalStrategy, JwtStrategy],
   imports: [
     DatabaseModule,
     JwtModule.register({

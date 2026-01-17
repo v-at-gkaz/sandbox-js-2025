@@ -9,19 +9,22 @@ import {
   UseGuards,
 } from '@nestjs/common';
 import { AuthService } from './auth.service';
-import { SignInDto } from '../database/dto/sign-in.dto';
 import { SignUpDto } from '../database/dto/sign-up.dto';
-import { AuthGuard } from './auth.guard';
+
+// import { AuthGuard } from './auth.guard';
+
+import { LocalAuthGuard } from './local-auth.guard';
+import { JwtAuthGuard } from './jwt-auth.guard';
 
 @Controller('auth')
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
+  @UseGuards(LocalAuthGuard)
   @HttpCode(HttpStatus.OK)
   @Post('sign-in')
-  signIn(@Body() signInDto: SignInDto) {
-    // FIXME: !
-    return this.authService.signIn(signInDto.login, signInDto.password);
+  signIn(@Request() req) {
+    return this.authService.signIn(req.user);
   }
 
   @HttpCode(HttpStatus.OK)
@@ -31,7 +34,7 @@ export class AuthController {
     return this.authService.signUp(signUpDto.login, signUpDto.password);
   }
 
-  @UseGuards(AuthGuard)
+  @UseGuards(JwtAuthGuard)
   @HttpCode(HttpStatus.OK)
   @Get('profile')
   getProfile(@Request() req) {
