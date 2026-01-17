@@ -5,10 +5,14 @@ import {
   UnauthorizedException,
 } from '@nestjs/common';
 import { DatabaseService } from '../database/database.service';
+import { JwtService } from '@nestjs/jwt';
 
 @Injectable()
 export class AuthService {
-  constructor(private readonly dbService: DatabaseService) {}
+  constructor(
+    private readonly dbService: DatabaseService,
+    private jwtService: JwtService,
+  ) {}
 
   async signIn(username: string, pass: string): Promise<any> {
     const user = await this.dbService.findOne(username);
@@ -16,10 +20,11 @@ export class AuthService {
     if (user?.password !== pass) {
       throw new UnauthorizedException();
     }
-    const { password, ...result } = user;
-    // TODO: Generate a JWT and return it here
-    // instead of the user object
-    return result;
+
+    const payload = { sub: user.id, login: user.login };
+    return {
+      access_token: this.jwtService.sign(payload),
+    };
   }
 
   async signUp(username: string, pass: string): Promise<any> {

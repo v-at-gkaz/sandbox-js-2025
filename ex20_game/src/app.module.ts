@@ -6,7 +6,6 @@ import { DatabaseModule } from './modules/database/database.module';
 import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
 import { join } from 'node:path';
 import { AuthModule } from './modules/auth/auth.module';
-import { AuthController } from './modules/auth/auth.controller';
 
 config();
 const configService = new ConfigService();
