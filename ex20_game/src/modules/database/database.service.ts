@@ -4,6 +4,7 @@ import { UpdateDatabaseDto } from './dto/update-database.dto';
 import { UserEntity } from './entities/user.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
+import { Role } from '../auth/rbac/role.enum';
 
 @Injectable()
 export class DatabaseService {
@@ -42,5 +43,23 @@ export class DatabaseService {
 
   remove(id: number) {
     return `This action removes a #${id} database`;
+  }
+
+  async isUserHasAccess(user: any, requiredRoles: Role[]) {
+    try {
+      const foundUser = await this.usersRepository.findOneBy({ id: user.id });
+
+      if (!foundUser) {
+        return false;
+      }
+
+      return (
+        foundUser.isActive &&
+        ((foundUser.isAdmin && requiredRoles.includes(Role.Admin)) ||
+          (!foundUser.isAdmin && requiredRoles.includes(Role.User)))
+      );
+    } catch (e) {
+      return false;
+    }
   }
 }
