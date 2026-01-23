@@ -5,6 +5,7 @@ import { UserEntity } from './entities/user.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Role } from '../auth/rbac/role.enum';
+import { Permission } from '../auth/cbac/permission.enum';
 
 @Injectable()
 export class DatabaseService {
@@ -58,6 +59,43 @@ export class DatabaseService {
         ((foundUser.isAdmin && requiredRoles.includes(Role.Admin)) ||
           (!foundUser.isAdmin && requiredRoles.includes(Role.User)))
       );
+    } catch (e) {
+      return false;
+    }
+  }
+
+  async isUserHasPermission(user: any, requiredPerms: Permission[]) {
+    try {
+      const foundUser = await this.usersRepository.findOneBy({ id: user.id });
+
+      if (!foundUser) {
+        return false;
+      }
+
+      if (!foundUser.isActive) {
+        return false;
+      }
+
+      if (foundUser.isAdmin) {
+        return requiredPerms.some((perm: Permission) => {
+          return [
+            Permission.LIST_USERS,
+            Permission.CREATE_USERS,
+            Permission.UPDATE_USERS,
+            Permission.DELETE_USERS,
+            Permission.CHANGE_OWN_NAME,
+            Permission.CHANGE_OWN_PASSWORD,
+            Permission.CHANGE_PASSWORD,
+          ].includes(perm);
+        });
+      } else {
+        return requiredPerms.some((perm: Permission) => {
+          return [
+            Permission.CHANGE_OWN_NAME,
+            Permission.CHANGE_OWN_PASSWORD,
+          ].includes(perm);
+        });
+      }
     } catch (e) {
       return false;
     }

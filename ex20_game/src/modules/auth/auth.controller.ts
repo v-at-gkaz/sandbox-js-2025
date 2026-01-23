@@ -17,6 +17,9 @@ import { JwtAuthGuard } from './jwt-auth.guard';
 import { Roles } from './rbac/roles.decorator';
 import { Role } from './rbac/role.enum';
 import { RolesGuard } from './rbac/roles.guard';
+import { PermissionsGuard } from './cbac/permissions.guard';
+import { RequirePermissions } from './cbac/require-permissions.decorator';
+import { Permission } from './cbac/permission.enum';
 
 @Controller('auth')
 export class AuthController {
@@ -83,6 +86,28 @@ export class AuthController {
     return {
       path: 'profile4',
       payload: req.user,
+    };
+  }
+
+  @UseGuards(JwtAuthGuard, PermissionsGuard)
+  @HttpCode(HttpStatus.OK)
+  @Get('users-list')
+  @RequirePermissions(Permission.LIST_USERS, Permission.CREATE_USERS)
+  getUsersList(@Request() req) {
+    return {
+      path: 'users-list',
+      payload: ['fixme'],
+    };
+  }
+
+  @UseGuards(JwtAuthGuard, PermissionsGuard)
+  @HttpCode(HttpStatus.OK)
+  @Post('change-my-name')
+  @RequirePermissions(Permission.CHANGE_OWN_NAME)
+  chengeUserName(@Body() body) {
+    return {
+      path: 'change-my-name',
+      payload: ['fixme'],
     };
   }
 }
