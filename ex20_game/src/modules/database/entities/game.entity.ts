@@ -17,6 +17,13 @@ export class GameEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
+  @Column({
+    type: 'varchar',
+    length: 128,
+    nullable: false,
+  })
+  name: string;
+
   @CreateDateColumn({
     type: 'timestamp',
     default: () => 'CURRENT_TIMESTAMP(6)',

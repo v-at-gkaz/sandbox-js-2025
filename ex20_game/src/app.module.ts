@@ -6,6 +6,7 @@ import { DatabaseModule } from './modules/database/database.module';
 import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
 import { join } from 'node:path';
 import { AuthModule } from './modules/auth/auth.module';
+import { ApiModule } from './modules/api/api.module';
 
 config();
 const configService = new ConfigService();
@@ -43,6 +44,7 @@ export const dbConfig: any = {
     TypeOrmModule.forRoot(dbConfig),
     DatabaseModule,
     AuthModule,
+    ApiModule,
   ],
   providers: [],
 })
