@@ -24,10 +24,10 @@ export class GameEntity {
   created: Date;
 
   @Column({ type: 'enum', enum: GameStatus, default: GameStatus.STARTED })
-  cellValue: GameStatus;
+  status: GameStatus;
 
   @ManyToOne(() => UserEntity, (user) => user.id)
-  startedGamer: UserEntity;
+  firstGamer: UserEntity;
 
   @ManyToOne(() => UserEntity, (user) => user.id)
   secondGamer: UserEntity;

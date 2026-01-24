@@ -1,6 +1,4 @@
 import { Injectable } from '@nestjs/common';
-import { CreateDatabaseDto } from './dto/create-database.dto';
-import { UpdateDatabaseDto } from './dto/update-database.dto';
 import { UserEntity } from './entities/user.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
@@ -28,22 +26,6 @@ export class DatabaseService {
         isActive: true,
       }),
     );
-  }
-
-  create(createDatabaseDto: CreateDatabaseDto) {
-    return 'This action adds a new database';
-  }
-
-  findAll() {
-    return `This action returns all database`;
-  }
-
-  update(id: number, updateDatabaseDto: UpdateDatabaseDto) {
-    return `This action updates a #${id} database`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} database`;
   }
 
   async isUserHasAccess(user: any, requiredRoles: Role[]) {
